@@ -29,5 +29,12 @@
       text-align: left;
       color: var(--color-light-green);
     }
+
+    @media screen and (min-width: 65rem) {
+      div.chat-history {
+       max-width: 70%;
+       margin: 0 auto;
+      }
+    }
   </style>
   

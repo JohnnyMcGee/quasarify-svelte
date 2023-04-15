@@ -1,10 +1,17 @@
 <script>
   import SendIcon from "./SendIcon.svelte";
   export let sendMessage;
-  export let currentMessage;
+  let currentMessage = "";
+
+  const onSubmit = (e) => {
+    e.preventDefault();
+    sendMessage(currentMessage);
+    currentMessage = "";
+  };
+  
 </script>
 
-<form on:submit|preventDefault={sendMessage}>
+<form on:submit|preventDefault={onSubmit}>
   <input
     bind:value={currentMessage}
     type="text"

@@ -2,15 +2,12 @@
   import ChatHistory from "../components/ChatHistory.svelte";
   import InputForm from "../components/InputForm.svelte";
 
-  let currentMessage = "";
   let history = [];
 
-  const sendMessage = async () => {
+  const sendMessage = async (currentMessage) => {
     if (currentMessage) {
       history = [...history, currentMessage];
-      const m = currentMessage;
-      currentMessage = "";
-      const qm = await quasarifyMessage(m);
+      const qm = await quasarifyMessage(currentMessage);
       typewriterEffect(qm);
     }
   };
@@ -34,9 +31,9 @@
   };
 </script>
 
-<h1>Quasarify Your Message</h1>
+<h1>QuasarChat</h1>
 <ChatHistory {history} />
-<InputForm {sendMessage} {currentMessage} />
+<InputForm {sendMessage} />
 
 <style>
   h1 {
