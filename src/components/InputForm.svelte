@@ -8,7 +8,6 @@
     sendMessage(currentMessage);
     currentMessage = "";
   };
-  
 </script>
 
 <form on:submit|preventDefault={onSubmit}>

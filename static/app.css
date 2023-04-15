@@ -44,3 +44,7 @@ button,
 a {
   cursor: pointer;
 }
+
+input {
+  font-family: "Space Mono", monospace;
+}
